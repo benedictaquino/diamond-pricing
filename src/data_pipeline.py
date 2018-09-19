@@ -1,4 +1,5 @@
 import pandas as pd
+import numpy as np
 from sklearn.model_selection import train_test_split
 
 def train_test_split_to_csv(filename, random_state):
@@ -13,6 +14,18 @@ def train_test_split_to_csv(filename, random_state):
     train.to_csv('data/train.csv')
     test.to_csv('data/test.csv')
 
+def data_clean(df):
+    df['lnprice'] = np.log(df['price'])
+    df['carat2'] = df['carat'] ** 2
+
+    df['recolor'] = df['color']
+
+    df['recolor'].replace(to_replace='D', value='DE', inplace=True)
+    df['recolor'].replace(to_replace='E', value='DE', inplace=True)
+    df['recolor'].replace(to_replace='F', value='FG', inplace=True)
+    df['recolor'].replace(to_replace='G', value='FG', inplace=True)
+
+    return df
 
 if __name__ == "__main__":
     train_test_split_to_csv(filename='data/diamonds.csv', random_state=0)

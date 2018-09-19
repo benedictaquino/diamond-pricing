@@ -26,15 +26,28 @@ def VIF(df):
 
     return vif_df
 
-def levenes_test(df):
+def levenes_test(target, feature):
     '''
     This function does a Levene's Test for a categorical feature
 
     PARAMETERS
     ----------
-    df: {pandas.DataFrame} a dataframe containing the categorical feature
+    target: {pandas.Series} the response variable
+
+    feature: {pandas.Series} the categorical feature
 
     RETURNS
     -------
-    results_df: {pandas.DataFrame} dataframe containing the results of the Levene's Test
+    results: {pandas.DataFrame} dataframe containing the results of the Levene's Test
     '''
+    categories = feature.unique()
+
+    feature_dict = {category: target[feature==category] for category in categories}
+
+    feature_tuple = (feature_dict[category] for category in categories)
+
+    stat, pval = levene(*feature_tuple)
+
+    results = pd.DataFrame({'Statistic': [stat], 'p-value': [pval]})
+
+    return results
