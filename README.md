@@ -12,12 +12,10 @@ as well as see how the model trained on the 308 diamonds I created for my course
 project performs on the larger set. The features are slightly different, but my 
 models only used the common features. 
 
-###### The details of my old project can be seen [here].
-
-[here]: https://github.com/benedictaquino/r-diamond-project
+###### The details of my old project can be seen [in this repository](https://github.com/benedictaquino/r-diamond-project)
 
 ## Technical Report
-###### R code, outputs, additional plots, and other specifics can be found in the diamonds.md markdown file.
+###### Python code, outputs, additional plots, and other specifics can be found in my [notebook](notebooks/linearmodels.ipynb).
 
 ### Summary
 
