@@ -27,6 +27,8 @@ def data_clean(df):
     df['recolor'].replace(to_replace='F', value='FG', inplace=True)
     df['recolor'].replace(to_replace='G', value='FG', inplace=True)
 
+    return df
+
 def VIF(df):
     '''
     This function calculates the VIF for each feature.
