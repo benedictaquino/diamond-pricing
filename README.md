@@ -37,10 +37,10 @@ My dataset consisted of information on 53,940 diamonds. The features are describ
 |**color**|diamond colour|J (worst) to D (best)|
 |**clarity**|a measurement of how clear the diamond|I1 (worst), SI2, SI1, VS2, VS1, VVS2, VVS1, IF (best)|
 |**x**|length in mm|0 to 10.74|
-|y|width in mm |0 to 58.9|
-|z|depth in mm |0 to31.8|
-|depth|total depth percentage = z / mean(x, y) = 2 * z / (x + y)|43 to 79|
-|table|width of top of diamond relative to widest point|43 to 95|
+|**y**|width in mm |0 to 58.9|
+|**z**|depth in mm |0 to31.8|
+|**depth**|total depth percentage = z / mean(x, y) = 2 * z / (x + y)|43 to 79|
+|**table**|width of top of diamond relative to widest point|43 to 95|
 |**lnprice***|A log transformation was used to adjust for homoscedasticity|ln(326) to ln(18,823)|
 |**recolor***|Regrouping of the color variable|DE, FG, H, I, J|
 ###### * engineered features
