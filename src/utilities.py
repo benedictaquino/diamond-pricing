@@ -29,6 +29,22 @@ def data_clean(df):
 
     return df
 
+def old_data_clean(df):
+    df['lnprice'] = np.log(df['price'])
+    df['carat2'] = df['carat'] ** 2
+
+    df['recolor'] = df['color']
+
+    df['recolor'].replace(to_replace='D', value='DEF', inplace=True)
+    df['recolor'].replace(to_replace='E', value='DEF', inplace=True)
+    df['recolor'].replace(to_replace='F', value='DEF', inplace=True)
+    df['recolor'].replace(to_replace='G', value='GHIJ', inplace=True)
+    df['recolor'].replace(to_replace='H', value='GHIJ', inplace=True)
+    df['recolor'].replace(to_replace='I', value='GHIJ', inplace=True)
+    df['recolor'].replace(to_replace='J', value='GHIJ', inplace=True)
+
+    return df
+
 def VIF(df):
     '''
     This function calculates the VIF for each feature.
